@@ -5,15 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Data Kos Resmi Kelurahan Sukorame</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {},
-    }
-  }
-</script>
 <style>
-  .sidebar-collapsed { width: 5rem; }
+  .sidebar-collapsed { width: 20 !important; }
   .sidebar-collapsed .sidebar-text { display: none; }
   .sidebar-collapsed .sidebar-logo { display: none; }
   .header-logo.show { display: flex !important; }
@@ -27,14 +20,14 @@
   .textmati { color: #999999; }
   .bgsekon { background-color: #F8F1FF; }
 
-  .se1judul { color: #999999; font-size: 32px; font-weight: 600; }
-  .primjudul { font-size: 48px; font-weight: 600; }
+  .se1judul { color: #999999; font-size: 2rem; font-weight: 600; }
+  .primjudul { font-size: 3rem; font-weight: 600; }
 
   .cahaya:hover { color: #704E98; text-shadow: 0 0 1px #BFA2E1; transition: all 0.3s ease; }
 
   .card {
     background-color: #fff;
-    border-radius: 16px;
+    border-radius: 1rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     overflow: hidden;
     width: 100%;
@@ -42,17 +35,17 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   .card:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(112,78,152,0.2); }
-  .card img { width: 100%; height: 160px; object-fit: cover; border-top-left-radius: 16px; border-top-right-radius: 16px; }
-  .card-content { padding: 12px; }
-  .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .card img { width: 100%; height: 160px; object-fit: cover; border-top-left-radius: 1rem; border-top-right-radius: 1rem; }
+  .card-content { padding: 0.75rem; }
+  .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
   .card-header h3 { font-size: 1.25rem; font-weight: 700; margin: 0; }
 
-  .tagcwe { background-color: #FFEFE0; color: #FB923C; font-size: 0.75rem; padding: 4px 10px; border-radius: 9999px; font-weight: 500; }
-  .tagcwo { background-color: #DDECFF; color: #1D91FF; font-size: 0.75rem; padding: 4px 10px; border-radius: 9999px; font-weight: 500; }
-  .tagbeb { background-color: #D7F5E6; color: #1ABC9C; font-size: 0.75rem; padding: 4px 10px; border-radius: 9999px; font-weight: 500; }
+  .tagcwe { background-color: #FFEFE0; color: #FB923C; font-size: 0.75rem; padding: 0.25rem 0.625rem; border-radius: 9999px; font-weight: 500; }
+  .tagcwo { background-color: #DDECFF; color: #1D91FF; font-size: 0.75rem; padding: 0.25rem 0.625rem; border-radius: 9999px; font-weight: 500; }
+  .tagbeb { background-color: #D7F5E6; color: #1ABC9C; font-size: 0.75rem; padding: 0.25rem 0.625rem; border-radius: 9999px; font-weight: 500; }
 
   .location { color: #6B7280; font-size: 0.875rem; display: flex; align-items: center; }
-  .location i { color: #704E98; margin-right: 6px; }
+  .location i { color: #704E98; margin-right: 0.375rem; }
 </style>
 </head>
 <body class="bg-white text-black">
@@ -62,15 +55,15 @@
   <div class="flex items-center">
     <img src="img/logosuko.svg" alt="Logo" class="h-12 w-auto">
   </div>
-  <ul class="flex list-none m-0 p-0">
+  <ul class="flex m-0 p-0 list-none">
     <li class="ml-8">
-      <a href="" class="font-medium pb-0.5 border-b-2 transition-colors duration-300 textmati cahaya border-transparent">Beranda</a>
+      <a href="" class="font-medium pb-1 border-b-2 transition-colors duration-300 textmati cahaya border-transparent">Beranda</a>
     </li>
     <li class="ml-8">
-      <a href="" class="font-medium pb-0.5 border-b-2 transition-colors duration-300 textmati cahaya border-transparent">Daftar Kos Aktif</a>
+      <a href="" class="font-medium pb-1 border-b-2 transition-colors duration-300 textmati cahaya border-transparent">Daftar Kos Aktif</a>
     </li>
     <li class="ml-8">
-      <a href="index.html" class="font-medium pb-0.5 border-b-2 transition-colors duration-300 primwar border-[#704E98]">Tentang</a>
+      <a href="index.html" class="font-medium pb-1 border-b-2 transition-colors duration-300 primwar border-[#704E98]">Tentang</a>
     </li>
   </ul>
   <a href="login.html" class="font-medium py-3 px-6 rounded-full transition-colors duration-300 bg-[#704E98] text-white hover:bg-[#512D84]">Masuk</a>
@@ -79,10 +72,10 @@
 <!-- Content -->
 <div class="p-12 mt-8 grid grid-cols-12 gap-6">
   <div class="col-span-6">
-    <div class="w-[560px]">
+    <div class="max-w-xl">
       <div class="se1judul">Tentang Website ini</div>
       <div class="primjudul textprim">Pendataan Kos Sukorame</div>
-      <div class="textsekon">Kelurahan Sukorame merupakan salah satu wilayah dengan jumlah rumah kost yang cukup banyak, terutama karena letaknya yang strategis dan dekat dengan berbagai pusat kegiatan. Kondisi ini menjadikan kebutuhan informasi kos sangat penting, baik bagi warga setempat maupun pendatang.</div>
+      <div class="textsekon">Kelurahan Sukorame merupakan salah satu wilayah dengan jumlah rumah kost yang cukup banyak...</div>
     </div>
   </div>
   <div class="col-span-6 px-8">
@@ -93,12 +86,12 @@
 <!-- Tentang Website -->
 <div class="p-20 mt-20 grid grid-cols-12 gap-6 items-center bgsekon">
   <div class="col-span-6 primjudul primwar flex items-center justify-between">
-    <div class="flex items-center w-[700px]">
-      <div class="w-[400px] leading-tight">Apa Kegunaan Website ini?</div>
+    <div class="flex items-center max-w-2xl">
+      <div class="w-96 leading-tight">Apa Kegunaan Website ini?</div>
       <img src="img/panah.svg" alt="">
     </div>
   </div>
-  <div class="col-span-6 textsekon">Website ini berguna sebagai sarana pendataan rumah kost yang ada di Kelurahan Sukorame...</div>
+  <div class="col-span-6 textsekon">Website ini berguna sebagai sarana pendataan rumah kost...</div>
 </div>
 
 <!-- Galeri Kos -->
@@ -109,32 +102,14 @@
 <div class="px-12 grid grid-cols-12 gap-6 items-center mt-8">
   <div class="col-span-6"><img src="img/kos5.svg" alt="kos5"></div>
   <div class="col-span-6">
-    <div class="w-[450px]">
+    <div class="max-w-lg">
       <div class="primjudul textprim">Data Kami <span class="primwar">Resmi & Terverifikasi</span></div>
       <div class="textsekon pt-4">Seluruh data kost yang ditampilkan dalam sistem ini bersumber langsung dari Kelurahan Sukorame...</div>
     </div>
   </div>
 </div>
 
-<!-- FAQ -->
-<section class="p-12 mt-20 mb-20">
-  <div class="grid grid-cols-12 gap-10">
-    <div class="col-span-5">
-      <h2 class="primjudul textprim">Pertanyaan yang</h2>
-      <h2 class="primjudul primwar">Sering Diajukan (FAQ)</h2>
-      <p class="textsekon pt-4 leading-relaxed w-[400px]">Pertanyaan umum seputar cara kerja sistem dan pendataan kos di Kelurahan Sukorame.</p>
-    </div>
-    <div class="col-span-7 space-y-4">
-      <details class="border border-[#E4D9FB] rounded-xl bg-white p-5 open:border-[#A58AF8] open:shadow-md">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold textprim">Siapa yang bisa mendaftarkan kost di sistem ini?<span class="primwar text-2xl">›</span></summary>
-        <p class="mt-3 textsekon">Hanya pemilik kost di Kelurahan Sukorame yang bisa mendaftarkan melalui kantor kelurahan.</p>
-      </details>
-      <!-- Tambah details lainnya seperti sebelumnya -->
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
+<!-- Footer -->
 <footer class="p-8 bg-[#704E98] text-white px-12 py-10">
   <div class="grid grid-cols-1 md:grid-cols-4 gap-10 items-start">
     <div><img src="img/logoputih.svg" alt="Sukorame Berdaya" class="h-16 mb-4"></div>
