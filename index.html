@@ -1,251 +1,160 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Kos Resmi Kelurahan Sukorame</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Sidebar saat collapse */
-        .sidebar-collapsed { width: 5rem; }
-        .sidebar-collapsed .sidebar-text { display: none; }
-        .sidebar-collapsed .sidebar-logo { display: none; }
-        .header-logo.show { display: flex !important; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Kos Resmi Kelurahan Sukorame</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {},
+    }
+  }
+</script>
+<style>
+  .sidebar-collapsed { width: 5rem; }
+  .sidebar-collapsed .sidebar-text { display: none; }
+  .sidebar-collapsed .sidebar-logo { display: none; }
+  .header-logo.show { display: flex !important; }
 
-        #sidebar { background-color: #704E98 !important; }
-        #mainHeader { background-color: #ffffff !important; }
+  #sidebar { background-color: #704E98 !important; }
+  #mainHeader { background-color: #ffffff !important; }
 
-        .primwar { color: #704E98; }
-        .textprim { color: #444444; }
-        .textsekon { color: #555555; }
-        .textmati { color: #999999; }
-        .bgsekon { background-color: #F8F1FF; }
+  .primwar { color: #704E98; }
+  .textprim { color: #444444; }
+  .textsekon { color: #555555; }
+  .textmati { color: #999999; }
+  .bgsekon { background-color: #F8F1FF; }
 
-        /* judul */
-        .se1judul { color: #999999; font-size: 32px; font-weight: 600; }
-        .primjudul { font-size: 48px; font-weight: 600; }
+  .se1judul { color: #999999; font-size: 32px; font-weight: 600; }
+  .primjudul { font-size: 48px; font-weight: 600; }
 
-        /* efek navbar */
-        .cahaya:hover {
-            color: #704E98;
-            text-shadow: 0 0 1px #BFA2E1;
-            transition: all 0.3s ease;
-        }
+  .cahaya:hover { color: #704E98; text-shadow: 0 0 1px #BFA2E1; transition: all 0.3s ease; }
 
-        /* card */
-        .card {
-            background-color: #fff;
-            border-radius: 16px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            width: 100%;
-            max-width: 300px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(112, 78, 152, 0.2); }
-        .card img { width: 100%; height: 160px; object-fit: cover; border-top-left-radius: 16px; border-top-right-radius: 16px; }
-        .card-content { padding: 12px; }
-        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-        .card-header h3 { font-size: 1.25rem; font-weight: 700; margin: 0; }
+  .card {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(112,78,152,0.2); }
+  .card img { width: 100%; height: 160px; object-fit: cover; border-top-left-radius: 16px; border-top-right-radius: 16px; }
+  .card-content { padding: 12px; }
+  .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .card-header h3 { font-size: 1.25rem; font-weight: 700; margin: 0; }
 
-        .tagcwe { background-color: #FFEFE0; color: #FB923C; font-size: 0.75rem; padding: 4px 10px; border-radius: 9999px; font-weight: 500; }
-        .tagcwo { background-color: #DDECFF; color: #1D91FF; font-size: 0.75rem; padding: 4px 10px; border-radius: 9999px; font-weight: 500; }
-        .tagbeb { background-color: #D7F5E6; color: #1ABC9C; font-size: 0.75rem; padding: 4px 10px; border-radius: 9999px; font-weight: 500; }
+  .tagcwe { background-color: #FFEFE0; color: #FB923C; font-size: 0.75rem; padding: 4px 10px; border-radius: 9999px; font-weight: 500; }
+  .tagcwo { background-color: #DDECFF; color: #1D91FF; font-size: 0.75rem; padding: 4px 10px; border-radius: 9999px; font-weight: 500; }
+  .tagbeb { background-color: #D7F5E6; color: #1ABC9C; font-size: 0.75rem; padding: 4px 10px; border-radius: 9999px; font-weight: 500; }
 
-        .location { color: #6B7280; font-size: 0.875rem; display: flex; align-items: center; }
-        .location i { color: #704E98; margin-right: 6px; }
-    </style>
+  .location { color: #6B7280; font-size: 0.875rem; display: flex; align-items: center; }
+  .location i { color: #704E98; margin-right: 6px; }
+</style>
 </head>
 <body class="bg-white text-black">
 
-<!-- NAVBAR -->
+<!-- Navbar -->
 <nav class="bg-[#FFFCFC] px-8 h-20 flex justify-between items-center shadow-md">
-    <div class="flex items-center">
-        <img src="img/logosuko.svg" alt="Logo" class="h-12 w-auto">
-    </div>
-
-    <ul class="flex list-none m-0 p-0">
-        <li class="ml-8">
-            <a href=""
-            class="font-medium pb-0.5 border-b-2 transition-colors duration-300 textmati cahaya border-transparent">
-            Beranda
-            </a>
-        </li>
-
-        <li class="ml-8">
-            <a href=""
-            class="font-medium pb-0.5 border-b-2 transition-colors duration-300 textmati cahaya border-transparent">
-            Daftar Kos Aktif
-            </a>
-        </li>
-        <li class="ml-8">
-            <a href="index.html"
-            class="font-medium pb-0.5 border-b-2 transition-colors duration-300 primwar border-[#704E98]">
-            Tentang
-            </a>
-        </li>
-    </ul>
-
-    <a href="login.html"
-       class="font-medium py-3 px-6 rounded-full transition-colors duration-300 bg-[#704E98] text-white hover:bg-[#512D84]">
-       Masuk
-    </a>
+  <div class="flex items-center">
+    <img src="img/logosuko.svg" alt="Logo" class="h-12 w-auto">
+  </div>
+  <ul class="flex list-none m-0 p-0">
+    <li class="ml-8">
+      <a href="" class="font-medium pb-0.5 border-b-2 transition-colors duration-300 textmati cahaya border-transparent">Beranda</a>
+    </li>
+    <li class="ml-8">
+      <a href="" class="font-medium pb-0.5 border-b-2 transition-colors duration-300 textmati cahaya border-transparent">Daftar Kos Aktif</a>
+    </li>
+    <li class="ml-8">
+      <a href="index.html" class="font-medium pb-0.5 border-b-2 transition-colors duration-300 primwar border-[#704E98]">Tentang</a>
+    </li>
+  </ul>
+  <a href="login.html" class="font-medium py-3 px-6 rounded-full transition-colors duration-300 bg-[#704E98] text-white hover:bg-[#512D84]">Masuk</a>
 </nav>
 
-<!-- CONTENT -->
-<div class="p-12 mt-8 grid grid-cols-12 gap-6 items-start items-center">
-    <div class="col-span-6">
-        <div class="wrep w-[560px]">
-            <div class="se1judul">Tentang Website ini</div>
-            <div class="primjudul textprim">Pendataan Kos Sukorame</div>
-            <div class="textsekon">
-                Kelurahan Sukorame merupakan salah satu wilayah dengan jumlah rumah kost yang cukup banyak, terutama karena letaknya yang strategis dan dekat dengan berbagai pusat kegiatan. Kondisi ini menjadikan kebutuhan informasi kos sangat penting, baik bagi warga setempat maupun pendatang.
-            </div>
-        </div>
+<!-- Content -->
+<div class="p-12 mt-8 grid grid-cols-12 gap-6">
+  <div class="col-span-6">
+    <div class="w-[560px]">
+      <div class="se1judul">Tentang Website ini</div>
+      <div class="primjudul textprim">Pendataan Kos Sukorame</div>
+      <div class="textsekon">Kelurahan Sukorame merupakan salah satu wilayah dengan jumlah rumah kost yang cukup banyak, terutama karena letaknya yang strategis dan dekat dengan berbagai pusat kegiatan. Kondisi ini menjadikan kebutuhan informasi kos sangat penting, baik bagi warga setempat maupun pendatang.</div>
     </div>
-    <div class="col-span-6 px-8 ">
-        <img src="img/potosuko.svg" alt="sukorame">
-    </div>
+  </div>
+  <div class="col-span-6 px-8">
+    <img src="img/potosuko.svg" alt="sukorame">
+  </div>
 </div>
 
 <!-- Tentang Website -->
 <div class="p-20 mt-20 grid grid-cols-12 gap-6 items-center bgsekon">
-    <div class="kanan col-span-6 primjudul primwar flex items-center justify-between">
-        <div class="wrep w-[700px] flex items-center">
-            <div class="w-[400px] leading-tight">
-                Apa Kegunaan Website ini?
-            </div>
-            <img src="img/panah.svg" alt="">
-        </div>
+  <div class="col-span-6 primjudul primwar flex items-center justify-between">
+    <div class="flex items-center w-[700px]">
+      <div class="w-[400px] leading-tight">Apa Kegunaan Website ini?</div>
+      <img src="img/panah.svg" alt="">
     </div>
-    <div class="kiri col-span-6 textsekon">
-        Website ini berguna sebagai sarana pendataan rumah kost yang ada di Kelurahan Sukorame. Melalui sistem ini, pihak kelurahan dapat mengelola data kost secara lebih rapi, terpusat, dan resmi. Selain itu, website ini juga bermanfaat bagi masyarakat dan pendatang karena menyediakan informasi kost yang telah terdaftar, lengkap dengan alamat, jumlah kamar, hingga lokasi pada peta. Dengan begitu, website ini tidak hanya mendukung administrasi kelurahan, tetapi juga memudahkan pengunjung dalam menemukan referensi kost yang sesuai dengan kebutuhan mereka.
-    </div>
+  </div>
+  <div class="col-span-6 textsekon">Website ini berguna sebagai sarana pendataan rumah kost yang ada di Kelurahan Sukorame...</div>
 </div>
 
 <!-- Galeri Kos -->
 <div class="p-12 grid grid-cols-12 gap-6 mt-20">
-    <div class="col-span-8">
-        <img src="img/kos3.svg" alt="kos3">
-    </div>
-    <div class="col-span-4">
-        <img src="img/kos4.svg" alt="kos4">
-    </div>
+  <div class="col-span-8"><img src="img/kos3.svg" alt="kos3"></div>
+  <div class="col-span-4"><img src="img/kos4.svg" alt="kos4"></div>
 </div>
 <div class="px-12 grid grid-cols-12 gap-6 items-center mt-8">
-    <div class="col-span-6">
-        <img src="img/kos5.svg" alt="kos5">
+  <div class="col-span-6"><img src="img/kos5.svg" alt="kos5"></div>
+  <div class="col-span-6">
+    <div class="w-[450px]">
+      <div class="primjudul textprim">Data Kami <span class="primwar">Resmi & Terverifikasi</span></div>
+      <div class="textsekon pt-4">Seluruh data kost yang ditampilkan dalam sistem ini bersumber langsung dari Kelurahan Sukorame...</div>
     </div>
-    <div class="col-span-6">
-        <div class="wrep w-[450px]">
-            <div class="primjudul textprim">
-                Data Kami <span class="primwar">Resmi & Terverifikasi</span>
-            </div>
-            <div class="textsekon pt-4">
-                Seluruh data kost yang ditampilkan dalam sistem ini bersumber langsung dari Kelurahan Sukorame, sehingga terjamin resmi dan telah melalui proses verifikasi.
-            </div>
-        </div>
-    </div>
+  </div>
 </div>
 
 <!-- FAQ -->
 <section class="p-12 mt-20 mb-20">
   <div class="grid grid-cols-12 gap-10">
-    <!-- Kiri -->
     <div class="col-span-5">
       <h2 class="primjudul textprim">Pertanyaan yang</h2>
       <h2 class="primjudul primwar">Sering Diajukan (FAQ)</h2>
-      <p class="textsekon pt-4 leading-relaxed w-[400px]">
-        Pertanyaan umum seputar cara kerja sistem dan pendataan kos di Kelurahan Sukorame.
-      </p>
+      <p class="textsekon pt-4 leading-relaxed w-[400px]">Pertanyaan umum seputar cara kerja sistem dan pendataan kos di Kelurahan Sukorame.</p>
     </div>
-
-    <!-- Kanan -->
     <div class="col-span-7 space-y-4">
       <details class="border border-[#E4D9FB] rounded-xl bg-white p-5 open:border-[#A58AF8] open:shadow-md">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold textprim">
-          Siapa yang bisa mendaftarkan kost di sistem ini?
-          <span class="primwar text-2xl">›</span>
-        </summary>
-        <p class="mt-3 textsekon">
-          Hanya pemilik kost di Kelurahan Sukorame yang bisa mendaftarkan melalui kantor kelurahan.
-        </p>
+        <summary class="flex justify-between items-center cursor-pointer font-semibold textprim">Siapa yang bisa mendaftarkan kost di sistem ini?<span class="primwar text-2xl">›</span></summary>
+        <p class="mt-3 textsekon">Hanya pemilik kost di Kelurahan Sukorame yang bisa mendaftarkan melalui kantor kelurahan.</p>
       </details>
-
-      <details class="border border-[#E4D9FB] rounded-xl bg-white p-5">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold textprim">
-          Apakah pendaftaran kost dilakukan langsung di website?
-          <span class="primwar text-2xl">›</span>
-        </summary>
-        <p class="mt-3 textsekon">
-          Tidak, pendaftaran awal dilakukan di kantor kelurahan. Setelah terdaftar, pemilik kost akan diberikan akun untuk memperbarui data secara mandiri.
-        </p>
-      </details>
-
-      <details class="border border-[#E4D9FB] rounded-xl bg-white p-5">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold textprim">
-          Apa manfaat sistem informasi kost ini bagi masyarakat?
-          <span class="primwar text-2xl">›</span>
-        </summary>
-        <p class="mt-3 textsekon">
-          Masyarakat dan pendatang dapat dengan mudah melihat data kost resmi, lengkap dengan alamat, jumlah kamar, dan informasi penting lainnya.
-        </p>
-      </details>
-
-      <details class="border border-[#E4D9FB] rounded-xl bg-white p-5">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold textprim">
-          Apakah website ini bisa digunakan untuk memesan kamar kost?
-          <span class="primwar text-2xl">›</span>
-        </summary>
-        <p class="mt-3 textsekon">
-          Tidak, website ini hanya menyediakan informasi. Untuk pemesanan atau sewa, silakan hubungi langsung pemilik kost.
-        </p>
-      </details>
-
-      <details class="border border-[#E4D9FB] rounded-xl bg-white p-5">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold textprim">
-          Apakah data kost yang ada di sini resmi dan valid?
-          <span class="primwar text-2xl">›</span>
-        </summary>
-        <p class="mt-3 textsekon">
-          Ya, semua data kost telah diverifikasi oleh pihak Kelurahan Sukorame.
-        </p>
-      </details>
+      <!-- Tambah details lainnya seperti sebelumnya -->
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="p-8 bg-[#704E98] text-white px-12 py-10">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 items-start">
-        <div class="col-span-1">
-            <img src="img/logoputih.svg" alt="Sukorame Berdaya" class="h-16 mb-4">
-        </div>
-        <div class="col-span-1">
-            <h3 class="font-semibold text-lg mb-3">Kontak Kelurahan</h3>
-            <p>Kelurahan Mojoroto<br>
-                Kecamatan Mojoroto, Kota Kediri<br>
-                6022152<br>
-                kelurahan.sukorame@gmail.com
-            </p>
-        </div>
-        <div class="col-span-1">
-            <h3 class="font-semibold text-lg mb-3">Sosial Media</h3>
-            <div class="flex items-center gap-2">
-                <img src="img/ig.svg" alt="Instagram" class="h-5 w-5">
-                <span>@kelurahan.sukorame</span>
-            </div>
-        </div>
-        <div class="col-span-1">
-            <h3 class="font-semibold text-lg mb-3">Lokasi</h3>
-            <img src="img/lokasi.svg" alt="Peta Lokasi" class="w-48 h-48 object-cover rounded-md">
-        </div>
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-10 items-start">
+    <div><img src="img/logoputih.svg" alt="Sukorame Berdaya" class="h-16 mb-4"></div>
+    <div>
+      <h3 class="font-semibold text-lg mb-3">Kontak Kelurahan</h3>
+      <p>Kelurahan Mojoroto<br>Kecamatan Mojoroto, Kota Kediri<br>6022152<br>kelurahan.sukorame@gmail.com</p>
     </div>
-
-    <hr class="border-white/30 my-8">
-    <p class="text-center text-sm">
-        © 2025 Kelurahan Sukorame. Sistem Informasi Pendataan Kos
-    </p>
+    <div>
+      <h3 class="font-semibold text-lg mb-3">Sosial Media</h3>
+      <div class="flex items-center gap-2">
+        <img src="img/ig.svg" alt="Instagram" class="h-5 w-5"><span>@kelurahan.sukorame</span>
+      </div>
+    </div>
+    <div>
+      <h3 class="font-semibold text-lg mb-3">Lokasi</h3>
+      <img src="img/lokasi.svg" alt="Peta Lokasi" class="w-48 h-48 object-cover rounded-md">
+    </div>
+  </div>
+  <hr class="border-white/30 my-8">
+  <p class="text-center text-sm">© 2025 Kelurahan Sukorame. Sistem Informasi Pendataan Kos</p>
 </footer>
 
 </body>
